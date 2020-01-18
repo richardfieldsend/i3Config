@@ -18,14 +18,16 @@ set $mod Mod4
 # https://github.com/Airblader/i3
 #
 # You can also use any non-zero value if you'd like to have a border
-for_window [class="^.*"] border pixel 2 
+for_window [class="^.*"] border pixel 5
 # configuration
 gaps inner 10
-gaps outer 5
+gaps outer 10
 # smart borders
 # activate smart borders (always)
-smart_borders on
+# smart_borders on
 
+bindsym $mod+l		gaps outer current plus 5
+bindsym $mod+Shift+l	gaps outer current minus 5
 
 # font for window titles. ISO 10646 = Unicode
 font pango:DejaVu Sans Mono 8, Terminus Bold Semi-Condensed 8
@@ -41,7 +43,10 @@ bindsym $mod+Shift+Q kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
-bindsym $mod+d exec rofi -show run -lines 20 -eh 1.3 -opacity "85" -bw 0 -font "DejaVu Sans Mono 8"
+bindsym $mod+d exec rofi -show run -lines 10 -eh 1 -opacity 80 -bw 4 -fg "#cccccc" -color-enabled -seperator-style solid -sidebar-mode -font "DejaVu Sans Mono 6"
+
+# use rofi to display current windows select the appropriate window to go to it.
+bindsym $mod+Tab exec --no-startup-id rofi -show window
 
 # change focus
 bindsym $mod+h focus left
@@ -156,7 +161,7 @@ bar {
 }
 
 # start programs that I want to open every time I log into i3
-exec --no-startup-id i3-msg 'exec owncloud'
+# exec --no-startup-id i3-msg 'exec owncloud'
 exec --no-startup-id i3-msg 'exec dropbox start'
 exec --no-startup-id i3-msg 'exec redshift-gtk'
 exec --no-startup-id i3-msg 'exec xscreensaver'
@@ -166,7 +171,7 @@ exec --no-startup-id i3-msg 'exec setxkbmap -layout gb -variant dvorakukp -optio
 #exec --no-startup-id i3-msg 'exec emacs --daemon'
 exec --no-startup-id i3-msg 'exec conky'
 exec --no-startup-id i3-msg 'workspace 2: Firefox; exec firefox'
-#exec --no-startup-id i3-msg 'workspace 4: Emacs; exec emacsclient --alternate-editor="" -c "$@"'
-exec --no-startup-id i3-msg 'workspace 3: Terminal; exec alacritty'
+exec --no-startup-id i3-msg 'workspace 4: Emacs; exec emacsclient -a "" -c "$@"'
+exec --no-startup-id i3-msg 'workspace 3: Terminal; exec i3-sensible-terminal'
 exec --no-startup-id i3-msg 'workspace 1: Evolution; exec evolution'
-exec --no-startup-id i3-msg 'compton'
+exec --no-startup-id i3-msg 'exec compton'

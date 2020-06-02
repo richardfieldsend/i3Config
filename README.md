@@ -37,3 +37,35 @@ it...
 The final configuration I added was to have smart borders active:
 
 smart_borders on
+
+## June 2020 - Colours, Fonts and Comments.
+
+I'm pretty happy with the look of my i3 configuration now. Recent
+changes have tended to focus on minor tweaks. These include:
+
+* Setting rofi program launcher to have nice blue theme and use System
+  San Francisco Display 6 font.
+
+* Also changed the prompt for using rofi to 'run==>'
+
+* Configured i3lock launcher two provide two different wallpapers. One
+  is a cartoon Tux penguin, the other a nice wallpaper from my own
+  system.
+
+* Set a number of colour variables to be used in appropriate locations
+  in the i3bar (bg-color, inact-bg-color etc).
+
+* Configured the Dell keyboard speaker buttons to increase and
+  decrease volume. The Mute key works, but doesn't then undo, which is
+  problematic, but more an inconvenience than anything else.
+
+* Added commands to start Spotify, Workrave and the Pulseaudio icon on
+  the taskbar.
+
+* Other changes that have happened elsewhere include adding a section
+  to .bashrc which automatically starts a Tmux session (if it isn't
+  already running) when the terminal program starts.
+
+* Comments on lots of the lines to confirm what is happening for
+  future reference.
+  
